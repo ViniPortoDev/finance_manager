@@ -1,0 +1,37 @@
+import 'package:finance_manager/modules/home_module/controller/home_controller.dart';
+import 'package:finance_manager/modules/home_module/view/home/home_view.dart';
+import 'package:finance_manager/modules/home_module/view/info/info_view.dart';
+import 'package:finance_manager/modules/home_module/view/splash/splash_view.dart';
+import 'package:finance_manager/service/prefs_service.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import '../../routes/routes.dart';
+
+class HomeModule extends Module {
+  @override
+  final List<Bind> binds = [
+    Bind.lazySingleton((i) => PrefsService()),
+    Bind.lazySingleton((i) => HomeController()),
+  ];
+  @override
+  final List<ModularRoute> routes = [
+    ChildRoute(
+      Routes.splash,
+      child: (context, args) =>
+          SplashView(controller: Modular.get<HomeController>()),
+    ),
+    ChildRoute(
+      Routes.info,
+      child: (context, args) => InfoView(
+        prefs: Modular.get<PrefsService>(),
+        controller: Modular.get<HomeController>(),
+      ),
+    ),
+    ChildRoute(
+      Routes.home,
+      child: (context, args) => HomeView(
+        prefs: Modular.get<PrefsService>(),
+        controller: Modular.get<HomeController>(),
+      ),
+    ),
+  ];
+}
