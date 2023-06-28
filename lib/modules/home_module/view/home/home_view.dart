@@ -3,7 +3,6 @@ import 'package:finance_manager/modules/home_module/view/home/widgets/balance_ca
 import 'package:finance_manager/modules/home_module/view/home/widgets/expansible_extracts_widget.dart';
 import 'package:finance_manager/modules/home_module/view/home/widgets/user_list_tile_widget.dart';
 import 'package:finance_manager/utils/custom_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../service/prefs_service.dart';
 import '../../widgets/custom_bottom_navigatorbar_widget.dart';
@@ -49,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const CustomBottomNavigatorBar(),
+      bottomNavigationBar:  const CustomBottomNavigatorBar(),
       body: Stack(
         children: [
           Container(

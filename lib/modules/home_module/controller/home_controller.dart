@@ -17,6 +17,12 @@ class HomeController extends ChangeNotifier {
   final prefs = PrefsService();
   final List<ExtracModel> extractList = [];
 
+  bool isSelected() {
+    bool sla = false;
+    sla = !sla;
+    return sla;
+  }
+
   void addExtract() {
     extractList.insert(
       0,

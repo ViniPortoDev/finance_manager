@@ -3,41 +3,54 @@ import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
 class CustomBottomNavigatorBar extends StatelessWidget {
-  const CustomBottomNavigatorBar({super.key});
+  
+  const CustomBottomNavigatorBar({super.key, });
 
   @override
   Widget build(BuildContext context) {
-    return const BottomAppBar(
+    return BottomAppBar(
       color: CustomColors.terciary,
-      shape: CircularNotchedRectangle(),
+      shape: const CircularNotchedRectangle(),
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 18,
           vertical: 14,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              UniconsLine.home_alt,
-              color: CustomColors.widgetBackgrounds,
-              size: 24,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                UniconsLine.home_alt,
+                color: CustomColors.widgetBackgrounds,
+                size: 28,
+              ),
             ),
-            Icon(
-              UniconsLine.wallet,
-              color: Colors.white,
-              size: 24,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                UniconsLine.wallet,
+                color: Colors.white,
+                size: 28,
+              ),
             ),
-            SizedBox(width: 14),
-            Icon(
-              UniconsLine.chart,
-              color: Colors.white,
-              size: 24,
+            const SizedBox(width: 12),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                UniconsLine.chart,
+                color: Colors.white,
+                size: 28,
+              ),
             ),
-            Icon(
-              UniconsLine.user,
-              color: Colors.white,
-              size: 24,
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                UniconsLine.user,
+                color: Colors.white,
+                size: 28,
+              ),
             ),
           ],
         ),
