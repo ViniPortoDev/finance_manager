@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const CustomBottomNavigatorBar(),
+      bottomNavigationBar:  const CustomBottomNavigatorBar(),
       body: Stack(
         children: [
           Container(
