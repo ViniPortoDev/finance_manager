@@ -1,7 +1,8 @@
+import 'package:finance_manager/global/controller/global_controller.dart';
 import 'package:finance_manager/modules/home_module/controller/home_controller.dart';
-import 'package:finance_manager/modules/home_module/view/home/home_view.dart';
-import 'package:finance_manager/modules/home_module/view/info/info_view.dart';
-import 'package:finance_manager/modules/home_module/view/splash/splash_view.dart';
+import 'package:finance_manager/modules/home_module/views/home/home_view.dart';
+import 'package:finance_manager/modules/home_module/views/info/info_view.dart';
+import 'package:finance_manager/modules/home_module/views/splash/splash_view.dart';
 import 'package:finance_manager/service/prefs_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../routes/routes.dart';
@@ -31,6 +32,7 @@ class HomeModule extends Module {
       child: (context, args) => HomeView(
         prefs: Modular.get<PrefsService>(),
         controller: Modular.get<HomeController>(),
+        globalController:Modular.get<GlobalController>(),
       ),
     ),
   ];

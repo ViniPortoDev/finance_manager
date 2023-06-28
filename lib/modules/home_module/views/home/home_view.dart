@@ -1,22 +1,25 @@
+import 'package:finance_manager/global/controller/global_controller.dart';
 import 'package:finance_manager/modules/home_module/controller/home_controller.dart';
-import 'package:finance_manager/modules/home_module/view/home/widgets/balance_card_widget.dart';
-import 'package:finance_manager/modules/home_module/view/home/widgets/expansible_extracts_widget.dart';
-import 'package:finance_manager/modules/home_module/view/home/widgets/user_list_tile_widget.dart';
+import 'package:finance_manager/modules/home_module/views/home/widgets/balance_card_widget.dart';
+import 'package:finance_manager/modules/home_module/views/home/widgets/expansible_extracts_widget.dart';
+import 'package:finance_manager/modules/home_module/views/home/widgets/user_list_tile_widget.dart';
 import 'package:finance_manager/utils/custom_colors.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import '../../../../service/prefs_service.dart';
-import '../../widgets/custom_bottom_navigatorbar_widget.dart';
-import '../../widgets/custom_floacting_action_button_widget.dart';
+import '../../../../global/widgets/custom_bottom_navigatorbar_widget.dart';
+import '../../../../global/widgets/custom_floacting_action_button_widget.dart';
 import 'widgets/extract_popup_widget.dart';
 
 class HomeView extends StatefulWidget {
   final PrefsService prefs;
   final HomeController controller;
+  final GlobalController globalController;
   const HomeView({
     super.key,
     required this.controller,
     required this.prefs,
+    required this.globalController,
   });
 
   @override
@@ -49,7 +52,10 @@ class _HomeViewState extends State<HomeView> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const CustomBottomNavigatorBar(),
+      bottomNavigationBar: CustomBottomNavigatorBar(
+        iconSelected: 0,
+        globalController: widget.globalController,
+      ),
       body: Stack(
         children: [
           Container(

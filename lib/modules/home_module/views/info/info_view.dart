@@ -1,4 +1,4 @@
-import 'package:finance_manager/modules/home_module/widgets/custom_buttom_widget.dart';
+import 'package:finance_manager/global/widgets/custom_buttom_widget.dart';
 import 'package:finance_manager/service/prefs_service.dart';
 import 'package:finance_manager/utils/service_keys.dart';
 import 'package:flutter/material.dart';

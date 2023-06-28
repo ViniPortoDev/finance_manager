@@ -1,5 +1,5 @@
 import 'package:finance_manager/modules/home_module/controller/home_controller.dart';
-import 'package:finance_manager/modules/home_module/view/home/widgets/triple_circle_widget.dart';
+import 'package:finance_manager/modules/home_module/views/home/widgets/triple_circle_widget.dart';
 import 'package:finance_manager/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
 
